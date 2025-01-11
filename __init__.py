@@ -1,6 +1,3 @@
-def _jupyter_server_extension_paths():
-    return [
-        {
-            'module': 'notebook_shim.nbserver',
-        }
-    ]
+import sys
+from numba.core.utils import _RedirectSubpackage
+sys.modules[__name__] = _RedirectSubpackage(locals(), "numba.core.types")
